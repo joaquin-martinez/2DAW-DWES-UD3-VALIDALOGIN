@@ -12,6 +12,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ValidaLogin</servlet-name>
-    <url-pattern>/ValidaLogin</url-pattern>
+    <url-pattern>/validalogin</url-pattern>
   </servlet-mapping>
 </web-app>

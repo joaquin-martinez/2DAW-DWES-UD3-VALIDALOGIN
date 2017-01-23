@@ -11,10 +11,10 @@
 <%
  %>
 
-<jsp:useBean id="usuarioBean" class= "login.BeanUsuario" scope="request"  ></jsp:useBean>
+<jsp:useBean id="usuarioBean" class= "login.BeanUsuario" scope="session"  ></jsp:useBean>
 
 
-	<form method="post" action="ValidaLogin/login">
+	<form  action="validalogin" method="POST">
 	
 		<label for="login" >Introduzca usuario: </label>
 		<input name="login" type="text" value="<jsp:getProperty property="login" name="usuarioBean"/>">

@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 
-@WebServlet(name="validalogin",urlPatterns="/login")
+
 public class ValidaLogin extends HttpServlet {
 	
 	  private DataSource dsBdlogins;
@@ -73,7 +73,7 @@ public class ValidaLogin extends HttpServlet {
 			
 			
 			
-			
+			System.out.println("entrando en post!");
 			//Se obtiene el objeto de ámbito sesión
 			HttpSession sesion = request.getSession();
 		    // Obtener un objeto de ayuda para la solicitud
@@ -91,10 +91,11 @@ public class ValidaLogin extends HttpServlet {
 			//Se obtienen login y clave
 			login = request.getParameter("login");
 			clave = request.getParameter("clave");
-			beanUsuario = (BeanUsuario) request.getAttribute("beanUsuario");
+			System.out.println("Todo está ¡¡O0K!!");
+			beanUsuario = (BeanUsuario) sesion.getAttribute("usuarioBean");
 			beanUsuario.setLogin(login);
 			beanUsuario.setClave(clave);
-			
+			System.out.println("Todo está ¡¡O00K!!");
 			
 			try {
 				conexion = dsBdlogins.getConnection();
