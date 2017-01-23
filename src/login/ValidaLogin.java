@@ -100,12 +100,17 @@ public class ValidaLogin extends HttpServlet {
 			try {
 				conexion = dsBdlogins.getConnection();
 				st = conexion.createStatement();
-				rs = st.executeQuery("select login,clave from usuarios where login = '"+login+"'");
+				rs = st.executeQuery("select login,clave,nombre from login where login = '"+login+"'");
 				if (rs.next()) {
 					if (!rs.getString("clave").equals(clave)) {
 
 						resultado = false;
 						beanUsuario.setcausaError("La clave no coincide.");
+					}
+					else
+					{
+						beanUsuario.setNombre(rs.getString("nombre"));
+						System.out.println("Todo está ¡¡O00K!! " +  beanUsuario.getNombre() );
 					}
 				}
 				else
@@ -123,7 +128,7 @@ public class ValidaLogin extends HttpServlet {
 		      request.setAttribute("beanUsuario",beanUsuario);
 		      
 		      if(!resultado){
-		    	  vista = "index.jsp";
+		    	  vista = "/index.jsp";
 		      }else{
 		    	  vista= "/WEB-INF/resumen.jsp" ;
 		      }

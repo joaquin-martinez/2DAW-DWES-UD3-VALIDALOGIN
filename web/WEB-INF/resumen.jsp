@@ -4,23 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Resumen del login. </title>
 </head>
 <body>
 
 <jsp:useBean id="usuarioBean" class= "login.BeanUsuario" scope="session"  ></jsp:useBean>
 
 <p>
-<jsp:getProperty property="nombre" name="usuarioBean"/> </jsp:getProperty >
+<jsp:getProperty property="nombre" name="usuarioBean"/> 
 </p>
 
 
 <p>
-<jsp:getProperty property="usuario" name="usuarioBean"/> </jsp:getProperty >
+<jsp:getProperty property="login" name="usuarioBean"/> 
 </p>
 
 <p>
-<jsp:getProperty property="clave" name="usuarioBean"/> </jsp:getProperty >
+<jsp:getProperty property="clave" name="usuarioBean"/> 
 </p>
 
 
